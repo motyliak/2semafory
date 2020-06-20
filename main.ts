@@ -1,5 +1,4 @@
-input.onButtonPressed(Button.A, function on_button_pressed_a() {
-    
+input.onButtonPressed(Button.A, function () {
     if (ze1 == 1) {
         ze1 = 0
         zl1 = 1
@@ -29,7 +28,6 @@ input.onButtonPressed(Button.A, function on_button_pressed_a() {
         zl2 = 0
         ce2 = 1
     }
-    
     if (chyba == 1) {
         ce1 = 1
         zl1 = 0
@@ -39,10 +37,8 @@ input.onButtonPressed(Button.A, function on_button_pressed_a() {
         ce2 = 0
         chyba = 0
     }
-    
 })
-input.onButtonPressed(Button.B, function on_button_pressed_b() {
-    
+input.onButtonPressed(Button.B, function () {
     chyba = 1
 })
 let zl2 = 0
@@ -58,7 +54,7 @@ ce1 = 0
 ce2 = 1
 chyba = 0
 led.enable(false)
-basic.forever(function on_forever() {
+basic.forever(function () {
     if (chyba == 0) {
         pins.digitalWritePin(DigitalPin.P0, ze1)
         pins.digitalWritePin(DigitalPin.P1, zl1)
@@ -78,5 +74,4 @@ basic.forever(function on_forever() {
         pins.digitalWritePin(DigitalPin.P4, 1)
         basic.pause(200)
     }
-    
 })
